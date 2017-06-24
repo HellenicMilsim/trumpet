@@ -7,8 +7,10 @@
  * @param {!Object} res Cloud Function response context.
  */
 exports.register_ntf = function register_ntf(req, res) {
+  var request = require('request');
   var steamid;
   var username;
+  var api_url = "hellenic-milsim.community";
   var api_user = 'apiUsername';
   var api_key = 'apiKey';
 
@@ -27,30 +29,15 @@ exports.register_ntf = function register_ntf(req, res) {
   res.status(200);
 
 
-  var obj = {
+  var formData = {
+  // Pass a simple key-value pair 
+  "api_key" : api_key,
+  "api_username" : api_username,
     "title": "Νεα Εγγραφή: " + username,
     "raw": "Νέος χρήστης [" + username + "](https://www.hellenic-milsim.community/u/" + username + ")\n\nSteam ID: " + steamid,
     "category": 16,
-    "api_key" : api_key,
-    "api_username" : api_username,
-  };
-  
-//TODO Figure out multipart requests in node
-  
-  var options = {
-    host: "hellenic-milsim.community",
-    port: 80,
-    path: '/',
-    method: 'POST'
-  };
+};
 
-  https.request(options, function(res) {
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
-    res.setEncoding('utf8');
-    res.on('data', function(chunk) {
-      console.log('BODY: ' + chunk);
-    });
-  }).end();
+  request.post(api_url).form(formData);
 
 };
