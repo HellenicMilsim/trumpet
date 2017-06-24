@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Responds to any HTTP request that can provide a "message" field in the body.
+ * Notify Recruiters of a new member registration
  *
  * @param {!Object} req Cloud Function request context.
  * @param {!Object} res Cloud Function response context.
@@ -19,7 +19,7 @@ exports.register_ntf = function register_ntf(req, res) {
 
     username = req.body.user.username;
     steamid = req.body.user.user_fields['1'];
-  } catch {
+  } catch (e){
     res.status(400);
     return;
   }
@@ -30,15 +30,17 @@ exports.register_ntf = function register_ntf(req, res) {
   var obj = {
     "title": "Νεα Εγγραφή: " + username,
     "raw": "Νέος χρήστης [" + username + "](https://www.hellenic-milsim.community/u/" + username + ")\n\nSteam ID: " + steamid,
-    "category": 0, //TODO !!!!
-  }
+    "category": 16,
+    "api_key" : api_key,
+    "api_username" : api_username,
+  };
   
 //TODO Figure out multipart requests in node
   
   var options = {
-    host: "https://hellenic-milsim.community",
+    host: "hellenic-milsim.community",
     port: 80,
-    path: '/?api_key=' + api_key + '&api_username=' + api_username,
+    path: '/',
     method: 'POST'
   };
 
