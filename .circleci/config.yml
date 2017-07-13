@@ -3,7 +3,7 @@ jobs:
    build:
      working_directory: /
      docker:
-       - image: circleci/nodejs:6.10.1
+       - image: circleci/node:6.10.1
      steps:
       - checkout
       - run:
