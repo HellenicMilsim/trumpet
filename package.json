@@ -1,0 +1,18 @@
+{
+	"name": "@hmc/trumpet",
+	"version": "0.0.1",
+	"description": "Post a new Discourse topic when a user signs up",
+	"main": "index.js",
+	"author": "aklin",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HellenicMilsim/trumpet.git"
+	},
+	"bugs": {
+		"url": "https://github.com/HellenicMilsim/trumpet/issues"
+	},
+	"dependencies":{
+		"request": "^2.81.0"
+	}
+}
