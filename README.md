@@ -1,5 +1,7 @@
 # trumpet
 
+[![CircleCI](https://circleci.com/gh/HellenicMilsim/trumpet/tree/master.svg?style=svg)](https://circleci.com/gh/HellenicMilsim/trumpet/tree/master)
+
 Create user event from discourse:
 
 ```
