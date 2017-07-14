@@ -1,6 +1,12 @@
 # trumpet
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [![CircleCI](https://circleci.com/gh/HellenicMilsim/trumpet/tree/master.svg?style=svg)](https://circleci.com/gh/HellenicMilsim/trumpet/tree/master)
+
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+
+[![Issue Count](https://codeclimate.com/github/codeclimate/codeclimate/badges/issue_count.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
 Create user event from discourse:
 
